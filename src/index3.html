@@ -133,6 +133,20 @@
             background-color: #3700b3; /* Darker purple */
         }
 
+        /* Link styling inside details */
+        details a {
+            text-decoration: none;
+            padding: 8px 16px;
+            background-color: #6200ea;
+            color: white;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        details a:hover {
+            background-color: #3700b3;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             /* Adjust header padding for smaller screens */
@@ -215,45 +229,45 @@
         <h1>Book Showcase: Book 2 Details</h1>
     </div>
     <main>
-        <h1 style="color: #6200ea;">Book 2: Explore inventions</h1>
+        <h1 style="color: #6200ea;">Book 2: Explore Inventions</h1>
         <div>
-            <img src="/public/images/ineventions.jpeg" alt="Book 1 Image">
+            <img src="/gallery/ineventions.jpeg" alt="Cover image of Book 2: Explore Inventions">
         </div>
-        <details>
-            <summary>Genre</summary>
+        <details role="region" aria-labelledby="genre-summary">
+            <summary id="genre-summary">Genre</summary>
             <div>Technology</div>
             <div>Education</div>
         </details>
-        <details>
-            <summary>Index Page</summary>
+        <details role="region" aria-labelledby="index-summary">
+            <summary id="index-summary">Index Page</summary>
             <div>Introduction</div>
             <div>Chapter 1: Overview</div>
             <div>Chapter 2: Advanced Concepts</div>
         </details>
-        <details>
-            <summary>Authors</summary>
+        <details role="region" aria-labelledby="authors-summary">
+            <summary id="authors-summary">Authors</summary>
             <div>Jane Doe, John Smith</div>
         </details>
-        <details>
-            <summary>Overview</summary>
+        <details role="region" aria-labelledby="overview-summary">
+            <summary id="overview-summary">Overview</summary>
             <div>This book provides detailed insights into technology and communication skills for students and professionals.</div>
         </details>
-        <details>
-            <summary>Competitive Exam Relevance</summary>
+        <details role="region" aria-labelledby="exam-relevance-summary">
+            <summary id="exam-relevance-summary">Competitive Exam Relevance</summary>
             <div>Highly recommended for IT and communication-related government exams.</div>
         </details>
-        <details>
-            <summary>Purchase Links</summary>
+        <details role="region" aria-labelledby="purchase-links-summary">
+            <summary id="purchase-links-summary">Purchase Links</summary>
             <div><a href="#" style="background-color: #03dac6; color: #000;">Amazon</a></div>
             <div><a href="#" style="background-color: #03dac6; color: #000;">Flipkart</a></div>
         </details>
         <h1 style="color: #6200ea;">Feedback Form</h1>
-        <form>
+        <form action="/submit-feedback" method="POST">
             <dl>
-                <dt>Name</dt>
-                <dd><input type="text"></dd>
-                <dt>Feedback</dt>
-                <dd><input type="text"></dd>
+                <dt>Your Name</dt>
+                <dd><input type="text" name="name" required></dd>
+                <dt>Your Feedback</dt>
+                <dd><input type="text" name="feedback" required></dd>
             </dl>
             <button type="submit">Submit Feedback</button>
         </form>
